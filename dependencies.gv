@@ -1,0 +1,58 @@
+// Dependencies
+digraph {
+	E [label="Express.js"]
+	qs [label=qs]
+	E -> qs
+	etag [label=etag]
+	E -> etag
+	once [label=once]
+	E -> once
+	send [label=send]
+	E -> send
+	vary [label=vary]
+	E -> vary
+	debug [label=debug]
+	E -> debug
+	fresh [label=fresh]
+	E -> fresh
+	cookie [label=cookie]
+	E -> cookie
+	router [label=router]
+	E -> router
+	accepts [label=accepts]
+	E -> accepts
+	"type-is" [label="type-is"]
+	E -> "type-is"
+	parseurl [label=parseurl]
+	E -> parseurl
+	statuses [label=statuses]
+	E -> statuses
+	encodeurl [label=encodeurl]
+	E -> encodeurl
+	"mime-types" [label="mime-types"]
+	E -> "mime-types"
+	"proxy-addr" [label="proxy-addr"]
+	E -> "proxy-addr"
+	"body-parser" [label="body-parser"]
+	E -> "body-parser"
+	"escape-html" [label="escape-html"]
+	E -> "escape-html"
+	"http-errors" [label="http-errors"]
+	E -> "http-errors"
+	"on-finished" [label="on-finished"]
+	E -> "on-finished"
+	"content-type" [label="content-type"]
+	E -> "content-type"
+	finalhandler [label=finalhandler]
+	E -> finalhandler
+	"range-parser" [label="range-parser"]
+	E -> "range-parser"
+	"serve-static" [label="serve-static"]
+	E -> "serve-static"
+	"cookie-signature" [label="cookie-signature"]
+	E -> "cookie-signature"
+	"merge-descriptors" [label="merge-descriptors"]
+	E -> "merge-descriptors"
+	"content-disposition" [label="content-disposition"]
+	E -> "content-disposition"
+}
