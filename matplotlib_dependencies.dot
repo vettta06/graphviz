@@ -1,0 +1,63 @@
+digraph matplotlib_dependencies {
+    rankdir=TB;
+    concentrate=true;
+    node [fontname="Arial"];
+
+    # Dependencies (top level)
+    "contourpy" [label="contourpy", shape=ellipse, style=filled, fillcolor=lightyellow];
+    "cycler" [label="cycler", shape=ellipse, style=filled, fillcolor=lightyellow];
+    "fonttools" [label="fonttools", shape=ellipse, style=filled, fillcolor=lightyellow];
+    "kiwisolver" [label="kiwisolver", shape=ellipse, style=filled, fillcolor=lightyellow];
+    "numpy" [label="numpy", shape=ellipse, style=filled, fillcolor=lightyellow];
+    "packaging" [label="packaging", shape=ellipse, style=filled, fillcolor=lightyellow];
+    "pillow" [label="pillow", shape=ellipse, style=filled, fillcolor=lightyellow];
+    "pyparsing" [label="pyparsing", shape=ellipse, style=filled, fillcolor=lightyellow];
+    "python-dateutil" [label="python-dateutil", shape=ellipse, style=filled, fillcolor=lightyellow];
+    "meson-python" [label="meson-python", shape=ellipse, style=filled, fillcolor=lightyellow];
+    "pybind11" [label="pybind11", shape=ellipse, style=filled, fillcolor=lightyellow];
+    "setuptools_scm" [label="setuptools_scm", shape=ellipse, style=filled, fillcolor=lightyellow];
+    "setuptools" [label="setuptools", shape=ellipse, style=filled, fillcolor=lightyellow];
+
+    # Main package (middle)
+    "matplotlib" [label="matplotlib", shape=box, style=filled, fillcolor=lightblue];
+
+    # Information (bottom level)
+    "homepage" [label="Home-page:\nhttps://matplotlib.org", shape=note, style=filled, fillcolor=lightgreen];
+    "author" [label="Author:\nJohn D. Hunter, Michael Droettboom", shape=note, style=filled, fillcolor=lightcoral];
+
+    # Ranking for vertical layout
+    {rank=min;
+        "contourpy"
+        "cycler"
+        "fonttools"
+        "kiwisolver"
+        "numpy"
+        "packaging"
+        "pillow"
+        "pyparsing"
+        "python-dateutil"
+        "meson-python"
+        "pybind11"
+        "setuptools_scm"
+        "setuptools"
+    }
+    {rank=same; "matplotlib"}
+    {rank=max; "homepage"; "author"}
+
+    # Connections
+    "contourpy" -> "matplotlib";
+    "cycler" -> "matplotlib";
+    "fonttools" -> "matplotlib";
+    "kiwisolver" -> "matplotlib";
+    "numpy" -> "matplotlib";
+    "packaging" -> "matplotlib";
+    "pillow" -> "matplotlib";
+    "pyparsing" -> "matplotlib";
+    "python-dateutil" -> "matplotlib";
+    "meson-python" -> "matplotlib";
+    "pybind11" -> "matplotlib";
+    "setuptools_scm" -> "matplotlib";
+    "setuptools" -> "matplotlib";
+    "matplotlib" -> "homepage";
+    "matplotlib" -> "author";
+}

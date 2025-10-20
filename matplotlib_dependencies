@@ -1,0 +1,43 @@
+digraph matplotlib_dependencies {
+	concentrate=true rankdir=TB
+	{
+		rank=min
+		dep_contourpy [label=contourpy fillcolor=lightyellow shape=ellipse style=filled]
+		dep_cycler [label=cycler fillcolor=lightyellow shape=ellipse style=filled]
+		dep_fonttools [label=fonttools fillcolor=lightyellow shape=ellipse style=filled]
+		dep_kiwisolver [label=kiwisolver fillcolor=lightyellow shape=ellipse style=filled]
+		dep_numpy [label=numpy fillcolor=lightyellow shape=ellipse style=filled]
+		dep_packaging [label=packaging fillcolor=lightyellow shape=ellipse style=filled]
+		dep_pillow [label=pillow fillcolor=lightyellow shape=ellipse style=filled]
+		dep_pyparsing [label=pyparsing fillcolor=lightyellow shape=ellipse style=filled]
+		"dep_python-dateutil" [label="python-dateutil" fillcolor=lightyellow shape=ellipse style=filled]
+		"dep_meson-python" [label="meson-python" fillcolor=lightyellow shape=ellipse style=filled]
+		dep_pybind11 [label=pybind11 fillcolor=lightyellow shape=ellipse style=filled]
+		dep_setuptools_scm [label=setuptools_scm fillcolor=lightyellow shape=ellipse style=filled]
+		dep_setuptools [label=setuptools fillcolor=lightyellow shape=ellipse style=filled]
+	}
+	{
+		rank=same
+		matplotlib [label=matplotlib fillcolor=lightblue shape=box style=filled]
+	}
+	{
+		rank=max
+		homepage [label="Home-page: https://matplotlib.org" fillcolor=lightgreen shape=note style=filled]
+		author [label="Author: John D. Hunter, Michael Droettboom" fillcolor=lightcoral shape=note style=filled]
+	}
+	dep_contourpy -> matplotlib
+	dep_cycler -> matplotlib
+	dep_fonttools -> matplotlib
+	dep_kiwisolver -> matplotlib
+	dep_numpy -> matplotlib
+	dep_packaging -> matplotlib
+	dep_pillow -> matplotlib
+	dep_pyparsing -> matplotlib
+	"dep_python-dateutil" -> matplotlib
+	"dep_meson-python" -> matplotlib
+	dep_pybind11 -> matplotlib
+	dep_setuptools_scm -> matplotlib
+	dep_setuptools -> matplotlib
+	matplotlib -> homepage
+	matplotlib -> author
+}
