@@ -1,0 +1,38 @@
+.PHONY: help install run clean deps graphviz-code
+PYTHON = py
+SCRIPT = main.py
+OUTPUT_FILE = graphviz_code.txt
+help:
+	@echo "Available targets:"
+	@echo "  install    - Install required Python packages"
+	@echo "  run        - Run the main script"
+	@echo "  deps       - Get dependencies and generate graphviz code"
+	@echo "  graphviz-code - Show generated Graphviz code"
+	@echo "  clean      - Remove generated files"
+	@echo "  help       - Show this help message"
+
+install:
+	$(PYTHON) -m pip install requests graphviz
+run:
+	$(PYTHON) $(SCRIPT)
+
+deps: run
+
+graphviz-code:
+	@if [ -f "$(OUTPUT_FILE)" ]; then \
+		echo "Graphviz code from $(OUTPUT_FILE):"; \
+		echo "=========================================="; \
+		cat $(OUTPUT_FILE); \
+		echo "=========================================="; \
+	else \
+		echo "File $(OUTPUT_FILE) not found. Run 'make run' first."; \
+	fi
+
+clean:
+	rm -f $(OUTPUT_FILE)
+	rm -f dependencies.gv
+	rm -f dependencies.gv.pdf
+	rm -f graphviz_code.txt
+
+list:
+	@$(MAKE) -pRrq -f $(lastword $(MAKEFILE_LIST)) : 2>/dev/null | awk -v RS= -F: '/^# File/,/^# Finished Make data base/ {if ($$1 !~ "^[#.]") {print $$1}}' | sort | grep -E -v -e '^[^[:alnum:]]' -e '^$@$$'
