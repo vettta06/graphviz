@@ -105,13 +105,5 @@ for dot_path in dot_paths:
     except (subprocess.CalledProcessError, FileNotFoundError):
         continue
 
-if not png_created:
-    print("Graphviz не установлен. PNG файл не создан.")
-    print("\nЧтобы получить изображение:")
-    print("1. Откройте https://dreampuf.github.io/GraphvizOnline/")
-    print("2. Скопируйте содержимое файла matplotlib_dependencies.dot")
-    print("3. Вставьте в левое окно сайта")
-    print("4. Сохраните изображение справа")
-
 print("СОДЕРЖИМОЕ DOT ФАЙЛА:")
 print(dot_code)
